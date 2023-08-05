@@ -1,0 +1,203 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mywebservice1
+spec:
+  type: NodePort
+  selector:
+    dc: IN #This helps svc to identify its work, means to which rc it needs to provide service.
+  ports:
+    - port: 80        #some application running on port no 80
+      targetPort: 80  #container port no 80 coz the application is httpd
+      nodePort: 30001 #port of loadbalancer type nodeport
+
+
+
+
+
+
+
+
+
+
+
+
+#    1 git init
+#    3 git clone https://github.com/Malhar-06/K8s-Learning.git
+#    4 git remote add origin https://github.com/Malhar-06/K8s-Learning.git
+#    5 git remote -v
+#    6 git status
+#    7 git add .
+#   11 git commit -m "upload 1st file"
+#   12 git branch
+#   13 git log
+#   14 git branch yaml
+#   15 git checkout yaml
+#   16 git branch
+#   17 git add .
+#   18 git status
+#   19 git push origin yaml
+#   20 git clone
+#   21 git clone https://github.com/Malhar-06/K8s-Learning.git
+#   22 cd .\K8s-Learning\
+#   23 ls
+#   24 git status
+#   25 git add .
+#   26 git branch
+#   27 git branch -M main
+#   28 git branch
+#   29 git push -u origin main
+#   30 git add .
+#   31 git push -u origin main
+#   32 git commit -m "second"
+#   33 git push -u origin main
+#   34 git branch
+#   35 git merge yaml
+#   36 git merge origin yaml
+#   37 git merge origin/yaml
+#   40 kubectl create -f labels-selectors.yml
+#   41 kubectl delete pods --all
+#   46 kubectl get pods --show-labels
+#   47 kubectl create -f first_pod.yml
+#   48 kubectl delete pods/mypod1
+#   49 kubectl create -f first_pod.yml
+#   50 kubectl get pods --show-labels
+#   51 kubectl get pods --selectors "dc=IN" --show-labels
+#   52 kubectl get pods --selector "dc=IN" --show-labels
+#   53 kubectl get pods --selector "dc in IN" --show-labels
+#   54 kubectl get pods --selector "dc in (IN)" --show-labels
+#   55 kubectl get pods --selector "dc notin (IN)" --show-labels
+#   60 kubectl delete pods --all
+#   61 kubectl get rc
+#   62 git status
+#   63 git create -f ReplicationController.yml
+#   64 kubectl create -f ReplicationController.yml
+#   65 kubectl get rc
+#   66 kubectl get pods
+#   67 kubectl create -f labels-selectors.yml
+#   68 kubectl get rc
+#   69 kubectl get pods
+#   70 kubectl get pods
+#   71 kubectl delete pods --all
+#   72 kubectl create -f labels-selectors.yml
+#   73 kubectl get pods
+#   74 kubectl delete rc -aall
+#   75 kubectl delete rc -all
+#   76 kubectl delete rc --all
+#   77 kubectl get pods
+#   78 kubectl create -f labels-selectors.yml
+#   79 kubectl get pods
+#   80 kubectl create -f ReplicationController.yml
+#   81 kubectl get pods
+#   82 kubectl get rc
+#   83 kubectl delete pods --all
+#   84 kubectl get pods
+#   85 git diff
+#   86 git add .
+#   87 git status
+#   88 git commit -m "session7"
+#   89 gir bramch
+#   90 git branch
+#   91 git push origin main
+#   92 git push origin main
+#   93 git fetch
+#   94 git push origin main
+#   95 git pull
+#   96 git push origin main
+#   97 kubectl scale --replicas=3 rc/
+#   98 kubectl get rc
+#   99 kubectl scale --replicas=3 rc/myrc1
+#  100 kubectl get rc
+#  101 kubectl get pods
+#  102 kubectl expose --type=NodePort --port=80 rc/myrc1
+#  103 kubectl get svc
+#  104 kubectl describe svc myrc1
+#  105 kubectl get pods
+#  106 kubectl get svc
+#  107 kubectl get rc
+#  108 kubectl describe svc myrc1
+#  109 minikube ssh
+#  110 kubectl run web --image=httpd
+#  111 kubectl run web --image=httpd
+#  112 kubectl run web --image=httpd
+#  113 kubectl describe pods
+#  114 kubectl get  pods
+#  115 kubectl delete rc -all
+#  116 kubectl delete rc --all
+#  117 kubectl delete pods --all
+#  118 kubectl create -f ReplicationController.yml
+#  119 kubectl get  pods
+#  120 kubectl get  rcc
+#  121 kubectl get  rc
+#  122 kubectl create -f service_nodeport.yml
+#  123 kubectl create -f service_nodeport.yml
+#  124 kubectl get svc
+#  125 kubectl get rc
+#  126 kubectl scale rc myrc1 --replicas=3
+#  127 kubectl scale rc myrc1 --replicas=2
+#  128 kubectl scale rc myrc1 --replicas=3
+#  129 kubectl get pods
+#  130 kubectl get svc
+#  131 kubectl describe svc/mywebservice
+#  132 route -n
+#  133 ifconfig
+#  134 kubectl get rc
+#  135 kubectl get pods
+#  136 kubectl get pods
+#  137 kubectl create -f ReplicationController.yml
+#  138 kubectl create -f ReplicationController.yml
+#  139 kubectl scale rc myrc2 --replicas=3
+#  140 kubectl delete rc.myrc1
+#  141 kubectl delete rc/myrc1
+#  142 kubectl get pods
+#  143 kubectl get rc
+#  144 kubectl get svc
+#  145 kubectl delete rc --all
+#  146 kubectl delete svc --all
+#  147 kubectl delete pods --all
+#  148 kubectl get  pods
+#  149 kubectl get  rc
+#  150 kubectl get  svc
+#  151 kubectl create -f service_nodeport.yml
+#  152 kubectl create -f ReplicationController.yml
+#  153 kubectl get  pods
+#  154 kubectl get  rc
+#  155 kubectl get  svc
+#  156 kubectl create -f service_nodeport.yml
+#  157 kubectl create -f service_nodeport.yml
+#  158 kubectl create -f service_nodeport.yml
+#  159 kubectl create -f service_nodeport.yml
+#  160 kubectl get  svc
+#  161 kubectl get pods
+#  162 kubectl get pods
+#  163 kubectl scale rc myrc1 --replicas=3
+#  164 kubectl get pods
+#  165 kubectl get pods
+#  166 kubectl run web --image=vimal13/apache-webserver-php
+#  167 kubectl delete pods/web
+#  168 kubectl delete svc --all
+#  169 kubectl delete rc --all
+#  170 kubectl delete pods --all
+#  171 kubectl create -f service_nodeport.yml
+#  172 kubectl create -f service_nodeport.yml
+#  173 kubectl create -f ReplicationController.yml
+#  174 kubectl get pods
+#  175 kubectl scale rc myrc1 --replicas=3
+#  176 kubectl get pods
+#  177 kubectl get pods
+#  178 kubectl delete rc --all
+#  179 kubectl delete pods --all
+#  180 kubectl create -f ReplicationController.yml
+#  181 kubectl get pods
+#  182 kubectl delete rc --all
+#  183 kubectl delete pods --all
+#  184 kubectl create -f ReplicationController.yml
+#  185 kubectl get pods
+#  186 kubectl get pods
+#  187 kubectl get pods
+#  188 kubectl scale rc myrc1 --replicas=3
+#  189 kubectl get pods
+#  190 kubectl delete svc --all
+#  191 kubectl create -f service_nodeport.yml
+#  192 kubectl delete svc --all
+#  193 kubectl create -f service_nodeport.yml
