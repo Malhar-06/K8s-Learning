@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: PersistentVolumeClaim
+metadata:
+  name: malhar-pvc-for-nfs
+spec:
+  storageClassName: nfs-client
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+

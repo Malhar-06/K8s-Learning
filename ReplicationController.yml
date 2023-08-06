@@ -10,7 +10,7 @@ spec:
 
   template:
     metadata:
-      name: "mypod1"
+      name: "mypod3"
       labels:
         dc: IN
         team: team1

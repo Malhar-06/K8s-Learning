@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: PersistentVolume
+metadata:
+  name: my-pv-to-malhar-pvc-for-nfs
+  
+spec:
+  storageClassName: nfs-client
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/mnt/malharsdata"

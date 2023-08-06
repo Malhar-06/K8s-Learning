@@ -12,7 +12,7 @@ spec:
     - { key: region, operator: In, values: [ IN ] }
 
   template:
-    metadata:
+    metadata:  
       name: "mypod6"
       labels:
         region: IN

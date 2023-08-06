@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrs1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+      dc: south
+      region: IN
+  template:
+    metadata:
+      name: "mypod8"
+      labels:
+        app: web
+        dc: south
+        region: IN
+    spec:
+      volumes:
+      - name: s1
+        persistentVolumeClaim:
+          claimName: malhar-pvc-for-nfs
+      containers:
+      - name: "myc2"
+        image: "vimal13/apache-webserver-php"
+        volumeMounts:
+        - mountPath: "/var/www/data"
+          name: s1
