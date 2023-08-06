@@ -8,6 +8,9 @@ metadata:
 
 spec:
   containers:
-  - name: "myc1"
+  - name: "mycdb"
     image: "mysql"
-   
+    env:
+      # Use secret in real usage
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
