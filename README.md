@@ -1,2 +1,2 @@
 # K8s-Learning
-In this repo I will push the yaml files and all the learnings from kubernetes.
+This repository contains YAML files and learnings from Kubernetes.
